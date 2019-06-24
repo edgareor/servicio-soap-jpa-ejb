@@ -13,18 +13,17 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 
-
-@XmlRootElement
 @Entity
 @Table(name = "PERSONAS")
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p ORDER BY p.idPersona")
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Persona implements Serializable {
 
 		/**
 	 * 
 	 */
-	private static final long serialVersionUID = -6408544422449021621L;
+	private static final long serialVersionUID = -6408544422449021622L;
 
 		@SequenceGenerator(name="SEQUENCE1", initialValue=43, allocationSize=1)
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQUENCE1")

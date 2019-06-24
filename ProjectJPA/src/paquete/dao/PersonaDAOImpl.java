@@ -74,25 +74,29 @@ public class PersonaDAOImpl implements PersonasDAO{
 			
 		} else {
 			
-			tx.begin();
 			Persona per = em.find(Persona.class, person.getIdPersona());
 			if(person.getNombrePersona()!=null) {
 				if ((person.getNombrePersona().trim().isEmpty()==false)) {
+					tx.begin();
 					per.setNombrePersona(person.getNombrePersona());
+					tx.commit();
 				}
 			}
 			if(person.getApellidoPersona()!=null) {
 				if ((person.getApellidoPersona().trim().isEmpty()==false)) {
+					tx.begin();
 					per.setApellidoPersona(person.getApellidoPersona());
+					tx.commit();
 				}
 			}
 			if(person.getRutPersona()!=null) {
 				if ((person.getRutPersona().trim().isEmpty()==false)) {
+					tx.begin();
 					per.setRutPersona(person.getRutPersona());
+					tx.commit();
 				}
 			}
-			tx.commit();
-			System.out.println("Persona modificada correctamente, revisar la BD");
+			System.out.println("Persona modificada correctamente, revisar la BD" + person);
 		}
 	}
 
